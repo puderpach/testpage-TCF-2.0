@@ -20,6 +20,21 @@
         ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
+    <script>
+        __tcfapi('addEventListener', 2, function (tcData, success) {
+            // inital tc string information
+            if (success && tcData.eventStatus === 'tcloaded') {
+                console.log(' TCF tcLoaded Event - tcString: ' + tcData.tcString);
+            }
+            // tc string after user interaction completed
+            else if (success && tcData.eventStatus === 'useractioncomplete') {
+                console.log('TCF useractioncomplete Event - tcString: ' + tcData.tcString);
+            }
+            else {
+                // do something else
+            }
+        });
+    </script>
 </head>
 
 <body>
